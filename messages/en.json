@@ -1,0 +1,294 @@
+{
+  "nav": {
+    "services": "Services",
+    "cases": "Cases",
+    "company": "Company",
+    "contact": "Contact",
+    "cta": "Talk to us"
+  },
+  "hero": {
+    "line1": "If you imagine it,",
+    "line2": "we build it.",
+    "subtitle": "Custom AI-powered digital solutions for businesses that want to lead.",
+    "cta_primary": "Explore our services",
+    "cta_secondary": "WhatsApp us"
+  },
+  "clients": {
+    "label": "Trusted by companies across Spain"
+  },
+  "services_home": {
+    "label": "Services",
+    "title": "We build what your",
+    "title2": "business needs.",
+    "subtitle": "From custom applications to intelligent agents. Every solution designed for real impact.",
+    "cta": "See all services",
+    "items": [
+      {
+        "title": "Custom apps & tools",
+        "description": "CRM, portals, management apps and intranets designed specifically for your business.",
+        "icon": "Code2"
+      },
+      {
+        "title": "24/7 AI Agents",
+        "description": "Chatbots, WhatsApp agents and virtual assistants that work without interruption.",
+        "icon": "Bot"
+      },
+      {
+        "title": "Intelligent Marketing",
+        "description": "AI-powered campaigns, SEO, generated content and automated real-time reporting.",
+        "icon": "TrendingUp"
+      },
+      {
+        "title": "Contextual AI",
+        "description": "Customer behavior analysis to optimize every business decision.",
+        "icon": "Brain"
+      }
+    ]
+  },
+  "crm_home": {
+    "label": "For enterprise",
+    "badge": "Powered by Unelia",
+    "title": "Enterprise CRM built for you",
+    "description": "We implement and customize Unelia, the next-generation enterprise CRM with built-in AI. Customer management, sales pipelines and advanced automation on a single platform.",
+    "features": [
+      "Native AI integration",
+      "Customizable pipelines",
+      "Advanced automation",
+      "Real-time reports",
+      "Multi-user & multi-role",
+      "Open API"
+    ],
+    "cta": "Request a demo"
+  },
+  "cases_home": {
+    "label": "Success stories",
+    "title": "Results that speak",
+    "title2": "for themselves.",
+    "cta": "See all cases",
+    "items": [
+      {
+        "sector": "Automotive",
+        "title": "CRM for multi-brand dealership",
+        "description": "End-to-end lead management, test drive tracking and sales cycle automation.",
+        "result": "+40% closings",
+        "tag": "CRM"
+      },
+      {
+        "sector": "HR",
+        "title": "Employee expense management app",
+        "description": "Mobile platform for expense recording, approval and reimbursement with automatic flows.",
+        "result": "80% less admin time",
+        "tag": "App"
+      },
+      {
+        "sector": "Health",
+        "title": "24/7 WhatsApp agent for clinic",
+        "description": "AI agent for appointment management, FAQs and patient follow-up around the clock.",
+        "result": "3x more appointments",
+        "tag": "AI Agent"
+      }
+    ]
+  },
+  "cta_band": {
+    "title": "Ready to transform your business?",
+    "subtitle": "Let's talk about your project, no commitment.",
+    "cta": "Get started"
+  },
+  "services_page": {
+    "title": "Our services",
+    "subtitle": "AI-powered digital solutions designed for businesses that need results, not promises.",
+    "items": [
+      {
+        "icon": "Code2",
+        "title": "Custom apps & tools",
+        "description": "We develop web and mobile applications adapted exactly to your processes. No generic solutions — we build from scratch what your business needs.",
+        "benefits": [
+          "Custom CRM and client management",
+          "Customer and supplier portals",
+          "Internal management tools",
+          "Integration with existing systems",
+          "iOS and Android mobile apps"
+        ]
+      },
+      {
+        "icon": "Bot",
+        "title": "24/7 AI Agents",
+        "description": "We design and implement AI agents that attend to your customers, handle requests and automate repetitive tasks without human intervention.",
+        "benefits": [
+          "WhatsApp Business agents",
+          "AI-powered web chatbots",
+          "Intelligent email assistants",
+          "Customer service agents",
+          "Internal process automation"
+        ]
+      },
+      {
+        "icon": "TrendingUp",
+        "title": "Intelligent Marketing",
+        "description": "We combine digital marketing strategy with the latest AI tools to generate more quality leads, optimize campaigns in real time and create content that converts.",
+        "benefits": [
+          "AI-driven ad campaigns",
+          "Technical and content SEO",
+          "AI content generation",
+          "Automated email marketing",
+          "Advanced analytics and reporting"
+        ]
+      },
+      {
+        "icon": "Brain",
+        "title": "Contextual AI",
+        "description": "We analyze your business data and customer behavior to identify hidden patterns, predict demand and make smarter decisions.",
+        "benefits": [
+          "Customer behavior analysis",
+          "Advanced audience segmentation",
+          "Demand prediction models",
+          "Pricing optimization",
+          "Automated executive reporting"
+        ]
+      }
+    ]
+  },
+  "cases_page": {
+    "title": "Success stories",
+    "subtitle": "Real results for real businesses. Every project is a solution designed to solve a specific business problem.",
+    "items": [
+      {
+        "sector": "Automotive",
+        "title": "CRM for multi-brand dealership",
+        "description": "A dealership with 4 brands and 3 locations needed to centralize lead management and sales process tracking. We built a custom CRM with sales pipeline automation.",
+        "solution": "CRM + automation",
+        "results": ["+40% close rate", "100% leads centralized", "Response time -60%"],
+        "tag": "CRM"
+      },
+      {
+        "sector": "HR",
+        "title": "Employee expense management app",
+        "description": "A company with 200+ employees managing expenses with Excel and paper receipts. We developed a mobile app with automatic approval flows and direct accounting.",
+        "solution": "Mobile app + approval flows",
+        "results": ["80% less admin time", "0 lost receipts", "Automatic accounting"],
+        "tag": "App"
+      },
+      {
+        "sector": "Health",
+        "title": "24/7 WhatsApp agent for clinic",
+        "description": "A private clinic losing appointments by not being able to answer calls outside business hours. We implemented an AI agent on WhatsApp for appointments, FAQs and follow-ups.",
+        "solution": "AI Agent + WhatsApp Business",
+        "results": ["3x more appointments", "24/7/365 support", "Satisfaction +28%"],
+        "tag": "AI Agent"
+      },
+      {
+        "sector": "Legal",
+        "title": "Client portal for law firm",
+        "description": "A firm with 15 lawyers needed a secure portal to share documents, case updates and communicate with clients without relying on email.",
+        "solution": "Secure web portal + notifications",
+        "results": ["100% digital files", "Centralized communication", "NPS +45 points"],
+        "tag": "Portal"
+      },
+      {
+        "sector": "Hospitality",
+        "title": "Booking & management for hotel chain",
+        "description": "A chain of 5 hotels with disparate systems that didn't communicate. We integrated all systems and added an AI agent for booking management and automated upselling.",
+        "solution": "Integration + AI Agent",
+        "results": ["Upselling revenue +22%", "Unified systems", "Autonomous check-in"],
+        "tag": "Integration"
+      },
+      {
+        "sector": "Retail",
+        "title": "Intelligent marketing for e-commerce",
+        "description": "Fashion e-commerce with high traffic but low conversion. We implemented AI segmentation, dynamic personalization and email marketing automation.",
+        "solution": "Contextual AI + Marketing automation",
+        "results": ["Conversion +35%", "Email CTR +120%", "CAC -28%"],
+        "tag": "AI Marketing"
+      }
+    ]
+  },
+  "company_page": {
+    "label": "Who we are",
+    "title": "We weave intelligence for",
+    "title2": "your business.",
+    "description": "Aracne Consulting is an AI digital solutions agency founded in Tarragona. Our name references the mythological weaver: we weave intelligent systems that connect processes, data and people so businesses can operate more efficiently and competitively.",
+    "mission_label": "Our mission",
+    "mission": "To democratize access to artificial intelligence for businesses of any size. Making the most advanced tools accessible, useful and sustainable for real businesses.",
+    "values_label": "Our principles",
+    "values": [
+      {
+        "title": "Clarity over jargon",
+        "description": "We explain things in business language, not technical. Solutions must be understood, not just work."
+      },
+      {
+        "title": "Visible ROI",
+        "description": "Every implementation has a measurable impact. If we can't demonstrate the return, we don't propose it."
+      },
+      {
+        "title": "Client autonomy",
+        "description": "The goal is for the client not to depend on Aracne forever. We document everything and train your team."
+      },
+      {
+        "title": "Ethical AI",
+        "description": "We don't implement systems that harm people or deceive users. AI must benefit, not harm."
+      }
+    ],
+    "partners_label": "Technology partners",
+    "partners": [
+      {
+        "name": "Anthropic",
+        "description": "Claude — the most capable and safe AI model on the market."
+      },
+      {
+        "name": "Unelia",
+        "description": "Next-generation enterprise CRM with built-in AI."
+      },
+      {
+        "name": "Meta",
+        "description": "WhatsApp Business API for conversational agents."
+      }
+    ]
+  },
+  "contact_page": {
+    "label": "Contact",
+    "title": "Let's talk about your project",
+    "subtitle": "Tell us what you need. We'll get back to you within 24 hours.",
+    "form": {
+      "name": "Full name",
+      "company": "Company",
+      "sector": "Sector",
+      "sector_placeholder": "Select your sector",
+      "sectors": ["Technology", "Automotive", "Health", "Retail", "Hospitality", "Legal", "Real estate", "Education", "Other"],
+      "phone": "Phone",
+      "need": "What do you need?",
+      "need_placeholder": "Tell us about your project or need...",
+      "submit": "Send message",
+      "submitting": "Sending...",
+      "success_title": "Message sent",
+      "success_desc": "We'll get back to you within 24 hours.",
+      "error": "Something went wrong. Please try again.",
+      "privacy": "By sending this form you accept our"
+    },
+    "info": {
+      "email_label": "Email",
+      "email": "hola@aracneconsulting.com",
+      "whatsapp_label": "WhatsApp",
+      "whatsapp_text": "Immediate response during business hours",
+      "address_label": "Address",
+      "address": "Tarragona, Spain",
+      "hours_label": "Hours",
+      "hours": "Monday to Friday, 9:00 – 18:00"
+    }
+  },
+  "footer": {
+    "tagline": "AI-powered digital solutions for businesses that want to lead.",
+    "location": "Tarragona, Spain",
+    "nav_label": "Navigation",
+    "legal_label": "Legal",
+    "contact_label": "Contact",
+    "links": {
+      "services": "Services",
+      "cases": "Success stories",
+      "company": "Company",
+      "contact": "Contact",
+      "legal": "Legal notice",
+      "privacy": "Privacy"
+    },
+    "rights": "All rights reserved."
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "nav": {
+    "services": "Servicios",
+    "cases": "Casos",
+    "company": "Empresa",
+    "contact": "Contacto",
+    "cta": "Hablar con nosotros"
+  },
+  "hero": {
+    "line1": "Si lo imaginas,",
+    "line2": "lo construimos.",
+    "subtitle": "Asesoría de IA para empresas en Cataluña y España. Automatización, agentes IA y apps a medida.",
+    "cta_primary": "Ver nuestros servicios",
+    "cta_secondary": "Hablar por WhatsApp"
+  },
+  "clients": {
+    "label": "Empresas que confían en nosotros"
+  },
+  "services_home": {
+    "label": "Servicios",
+    "title": "Construimos lo que tu",
+    "title2": "negocio necesita.",
+    "subtitle": "Desde aplicaciones a medida hasta agentes de inteligencia artificial. Cada solución, diseñada para tener impacto real.",
+    "cta": "Ver todos los servicios",
+    "items": [
+      {
+        "title": "Apps y herramientas a medida",
+        "description": "CRM, portales, apps de gestión e intranets diseñadas específicamente para tu negocio.",
+        "icon": "Code2"
+      },
+      {
+        "title": "Agentes IA 24/7",
+        "description": "Chatbots, agentes de WhatsApp y asistentes virtuales que trabajan sin interrupciones.",
+        "icon": "Bot"
+      },
+      {
+        "title": "Marketing Inteligente",
+        "description": "Campañas con IA, SEO, contenido generado y reporting automatizado en tiempo real.",
+        "icon": "TrendingUp"
+      },
+      {
+        "title": "IA de Contexto",
+        "description": "Análisis del comportamiento de tus clientes para optimizar cada decisión de negocio.",
+        "icon": "Brain"
+      }
+    ]
+  },
+  "crm_home": {
+    "label": "Para grandes empresas",
+    "badge": "Powered by Unelia",
+    "title": "CRM Enterprise a tu medida",
+    "description": "Implementamos y personalizamos Unelia, el CRM enterprise de nueva generación con IA integrada. Gestión de clientes, pipelines de ventas y automatización avanzada en una sola plataforma.",
+    "features": [
+      "Integración nativa con IA",
+      "Pipelines personalizables",
+      "Automatización avanzada",
+      "Reportes en tiempo real",
+      "Multiusuario y multirol",
+      "API abierta"
+    ],
+    "cta": "Solicitar demo"
+  },
+  "cases_home": {
+    "label": "Casos de éxito",
+    "title": "Resultados que hablan",
+    "title2": "por sí solos.",
+    "cta": "Ver todos los casos",
+    "items": [
+      {
+        "sector": "Automoción",
+        "title": "CRM para concesionario multimarca",
+        "description": "Gestión integral de leads, seguimiento de pruebas de conducción y automatización del ciclo de venta.",
+        "result": "Resultados en curso",
+        "tag": "CRM"
+      },
+      {
+        "sector": "RRHH",
+        "title": "App de gestión de gastos empresariales",
+        "description": "Plataforma móvil para registro, aprobación y reembolso de gastos con flujos automáticos.",
+        "result": "Resultados en curso",
+        "tag": "App"
+      },
+      {
+        "sector": "Salud",
+        "title": "Agente WhatsApp para clínica",
+        "description": "Agente inteligente para gestión de citas, FAQs y seguimiento de pacientes las 24 horas.",
+        "result": "Resultados en curso",
+        "tag": "Agente IA"
+      }
+    ]
+  },
+  "cta_band": {
+    "title": "¿Listo para transformar tu empresa?",
+    "subtitle": "Hablemos de tu proyecto sin compromiso.",
+    "cta": "Empezar ahora"
+  },
+  "services_page": {
+    "title": "Nuestros servicios",
+    "subtitle": "Soluciones de IA para empresas en Cataluña y España. Automatización, agentes inteligentes y apps a medida.",
+    "items": [
+      {
+        "icon": "Code2",
+        "title": "Apps y herramientas a medida",
+        "description": "Desarrollamos aplicaciones web y móvil adaptadas exactamente a tus procesos. Sin soluciones genéricas que luego hay que adaptar — construimos desde cero lo que tu negocio necesita.",
+        "benefits": [
+          "CRM y gestión de clientes personalizados",
+          "Portales de clientes y proveedores",
+          "Herramientas internas de gestión",
+          "Integraciones con sistemas existentes",
+          "Apps móviles iOS y Android"
+        ]
+      },
+      {
+        "icon": "Bot",
+        "title": "Agentes IA 24/7",
+        "description": "Diseñamos e implementamos agentes de inteligencia artificial que atienden a tus clientes, gestionan solicitudes y automatizan tareas repetitivas sin intervención humana.",
+        "benefits": [
+          "Agentes de WhatsApp Business",
+          "Chatbots web con IA",
+          "Asistentes de email inteligentes",
+          "Agentes de atención al cliente",
+          "Automatización de procesos internos"
+        ]
+      },
+      {
+        "icon": "TrendingUp",
+        "title": "Marketing Inteligente",
+        "description": "Combinamos estrategia de marketing digital con las últimas herramientas de IA para generar más leads de calidad, optimizar campañas en tiempo real y crear contenido que convierte.",
+        "benefits": [
+          "Campañas de publicidad con IA",
+          "SEO técnico y de contenido",
+          "Generación de contenido con IA",
+          "Email marketing automatizado",
+          "Reporting y analytics avanzado"
+        ]
+      },
+      {
+        "icon": "Brain",
+        "title": "IA de Contexto",
+        "description": "Analizamos los datos de tu negocio y el comportamiento de tus clientes para identificar patrones ocultos, predecir demanda y tomar decisiones más inteligentes.",
+        "benefits": [
+          "Análisis de comportamiento de clientes",
+          "Segmentación avanzada de audiencias",
+          "Modelos predictivos de demanda",
+          "Optimización de pricing",
+          "Reporting ejecutivo automatizado"
+        ]
+      }
+    ]
+  },
+  "cases_page": {
+    "title": "Casos de éxito",
+    "subtitle": "Proyectos reales para empresas reales en Cataluña y España. Cada solución diseñada para resolver un problema de negocio concreto.",
+    "items": [
+      {
+        "sector": "Automoción",
+        "title": "CRM para concesionario multimarca",
+        "description": "Un concesionario con múltiples marcas y delegaciones necesitaba centralizar la gestión de leads y el seguimiento del proceso de venta. Implementamos un CRM a medida con automatización del pipeline de ventas.",
+        "solution": "CRM + automatización",
+        "results": ["Resultados en curso", "Leads centralizados", "Pipeline automatizado"],
+        "tag": "CRM"
+      },
+      {
+        "sector": "RRHH",
+        "title": "App de gestión de gastos empresariales",
+        "description": "Empresa con numerosos empleados que gestionaban los gastos con Excel y tickets en papel. Desarrollamos una app móvil con flujos de aprobación automáticos y contabilización directa.",
+        "solution": "App móvil + flujos de aprobación",
+        "results": ["Resultados en curso", "Cero pérdida de justificantes", "Contabilización automática"],
+        "tag": "App"
+      },
+      {
+        "sector": "Salud",
+        "title": "Agente WhatsApp 24/7 para clínica",
+        "description": "Clínica privada que perdía citas por no poder atender solicitudes fuera de horario. Implementamos un agente IA en WhatsApp que gestiona citas, responde preguntas y hace seguimiento.",
+        "solution": "Agente IA + WhatsApp Business",
+        "results": ["Resultados en curso", "Atención 24/7/365", "Gestión automatizada"],
+        "tag": "Agente IA"
+      },
+      {
+        "sector": "Legal",
+        "title": "Portal de clientes para despacho de abogados",
+        "description": "Despacho de abogados que necesitaba un portal seguro para compartir documentos, actualizaciones de casos y comunicación con clientes sin depender del email.",
+        "solution": "Portal web seguro + notificaciones",
+        "results": ["Resultados en curso", "Digitalización completa", "Comunicación centralizada"],
+        "tag": "Portal"
+      },
+      {
+        "sector": "Hostelería",
+        "title": "Sistema de reservas y gestión para cadena hotelera",
+        "description": "Cadena hotelera con sistemas dispares que no se comunicaban. Integramos todos los sistemas y añadimos un agente IA para gestión de reservas y upselling automatizado.",
+        "solution": "Integración + Agente IA",
+        "results": ["Resultados en curso", "Sistemas unificados", "Upselling automatizado"],
+        "tag": "Integración"
+      },
+      {
+        "sector": "Retail",
+        "title": "Marketing inteligente para e-commerce",
+        "description": "E-commerce con alto volumen de tráfico pero baja conversión. Implementamos segmentación con IA, personalización dinámica y automatización de email marketing.",
+        "solution": "IA de Contexto + Marketing automation",
+        "results": ["Resultados en curso", "Segmentación con IA", "Email automatizado"],
+        "tag": "Marketing IA"
+      }
+    ]
+  },
+  "company_page": {
+    "label": "Quiénes somos",
+    "title": "Tejemos inteligencia para",
+    "title2": "tu negocio.",
+    "description": "Aracne Consulting es una asesoría de inteligencia artificial para empresas de Cataluña y España. Nuestro nombre hace referencia a la tejedora mitológica: tejemos sistemas inteligentes que conectan procesos, datos y personas para que las empresas puedan operar de forma más eficiente y competitiva.",
+    "mission_label": "Nuestra misión",
+    "mission": "Democratizar el acceso a la inteligencia artificial para empresas de cualquier tamaño. Hacer que las herramientas más avanzadas sean accesibles, útiles y sostenibles para negocios reales.",
+    "values_label": "Nuestros principios",
+    "values": [
+      {
+        "title": "Claridad antes que jerga",
+        "description": "Explicamos las cosas en lenguaje de negocio, no técnico. Las soluciones deben entenderse, no solo funcionar."
+      },
+      {
+        "title": "ROI visible",
+        "description": "Cada implementación tiene un impacto medible. Si no podemos demostrar el retorno, no lo proponemos."
+      },
+      {
+        "title": "Autonomía del cliente",
+        "description": "El objetivo es que el cliente no dependa eternamente de Aracne. Documentamos todo y formamos a tu equipo."
+      },
+      {
+        "title": "Ética en IA",
+        "description": "No implementamos sistemas que dañen a personas o engañen a usuarios. La IA debe beneficiar, no perjudicar."
+      }
+    ],
+    "partners_label": "Partners tecnológicos",
+    "partners": [
+      {
+        "name": "Anthropic",
+        "description": "Claude — el modelo de IA más capaz y seguro del mercado."
+      },
+      {
+        "name": "Unelia",
+        "description": "CRM enterprise de nueva generación con IA integrada."
+      },
+      {
+        "name": "Meta",
+        "description": "WhatsApp Business API para agentes conversacionales."
+      }
+    ]
+  },
+  "contact_page": {
+    "label": "Contacto",
+    "title": "Hablemos de tu proyecto",
+    "subtitle": "Cuéntanos qué necesitas. Te respondemos en menos de 24 horas.",
+    "form": {
+      "name": "Nombre y apellidos",
+      "company": "Empresa",
+      "sector": "Sector",
+      "sector_placeholder": "Selecciona tu sector",
+      "sectors": ["Tecnología", "Automoción", "Salud", "Retail", "Hostelería", "Legal", "Inmobiliario", "Educación", "Otro"],
+      "phone": "Teléfono",
+      "need": "¿Qué necesitas?",
+      "need_placeholder": "Cuéntanos tu proyecto o necesidad...",
+      "submit": "Enviar mensaje",
+      "submitting": "Enviando...",
+      "success_title": "Mensaje enviado",
+      "success_desc": "Te contactamos en menos de 24 horas.",
+      "error": "Algo salió mal. Inténtalo de nuevo.",
+      "privacy": "Al enviar este formulario aceptas nuestra"
+    },
+    "info": {
+      "email_label": "Email",
+      "email": "hola@aracneconsulting.com",
+      "whatsapp_label": "WhatsApp",
+      "whatsapp_text": "Respuesta inmediata en horario laboral",
+      "address_label": "Dirección",
+      "address": "Cataluña, España",
+      "hours_label": "Horario",
+      "hours": "Lunes a viernes, 9:00 – 18:00"
+    }
+  },
+  "footer": {
+    "tagline": "Asesoría de IA para empresas en Cataluña y España.",
+    "location": "Cataluña, España",
+    "nav_label": "Navegación",
+    "legal_label": "Legal",
+    "contact_label": "Contacto",
+    "links": {
+      "services": "Servicios",
+      "cases": "Casos de éxito",
+      "company": "Empresa",
+      "contact": "Contacto",
+      "legal": "Aviso legal",
+      "privacy": "Privacidad"
+    },
+    "rights": "Todos los derechos reservados."
+  }
+}
