@@ -11,32 +11,10 @@ interface CrmHomeSectionProps {
   dict: Dict
 }
 
-/* Stats for this section */
-const stats = [
-  { value: '50+', label: 'Proyectos' },
-  { value: '6', label: 'Clientes activos' },
-  { value: '100%', label: 'Satisfacción' },
-  { value: '24/7', label: 'Soporte IA' },
-]
-
 export default function CrmHomeSection({ dict }: CrmHomeSectionProps) {
   const c = dict.crm_home
   return (
     <>
-      {/* Stats strip — light bg */}
-      <section className="bg-aracne-bg py-16 border-t border-aracne-border">
-        <div className="container-narrow">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((s) => (
-              <div key={s.label}>
-                <p className="text-4xl md:text-5xl text-aracne-text mb-2">{s.value}</p>
-                <p className="text-sm text-aracne-muted">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CRM Enterprise — dark bg */}
       <section className="bg-aracne-dark section-padding overflow-hidden relative">
         {/* Subtle accent glow */}

@@ -15,13 +15,15 @@ const questrial = Questrial({
   display: 'swap',
 })
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aracneconsulting.com'
+
 export const metadata: Metadata = {
   title: {
     default: 'Aracne Consulting — Asesoría de IA para empresas en Cataluña',
     template: '%s | Aracne Consulting',
   },
   description:
-    'Asesoría de IA para empresas en Cataluña y España. Apps a medida, agentes WhatsApp IA, automatización de procesos y marketing inteligente.',
+    'Aracne Consulting — Asesoría de IA para empresas en Cataluña. Apps a medida, agentes WhatsApp, automatización y CRM Enterprise. Tarragona y toda España.',
   keywords: [
     'asesoría IA empresas Cataluña',
     'agente WhatsApp IA Barcelona',
@@ -32,6 +34,7 @@ export const metadata: Metadata = {
     'CRM enterprise IA',
     'marketing digital IA',
     'IA para empresas España',
+    'consultoría IA Tarragona',
   ],
   authors: [{ name: 'Aracne Consulting' }],
   creator: 'Aracne Consulting',
@@ -39,25 +42,31 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aracneconsulting.com',
-  ),
+  metadataBase: new URL(SITE_URL),
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     locale: 'es_ES',
     alternateLocale: 'en_US',
-    url: '/',
+    url: SITE_URL,
     siteName: 'Aracne Consulting',
     title: 'Aracne Consulting — Asesoría de IA para empresas en Cataluña',
     description:
-      'Asesoría de IA para empresas en Cataluña y España. Apps, agentes WhatsApp IA, automatización y marketing inteligente.',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Aracne Consulting' }],
+      'Apps a medida, agentes WhatsApp con IA, automatización de procesos y CRM Enterprise para empresas en Cataluña y España.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Aracne Consulting — IA para empresas en Cataluña',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Aracne Consulting — Asesoría de IA para empresas en Cataluña',
-    description: 'Asesoría IA empresas Cataluña: agentes WhatsApp, automatización y apps a medida.',
+    description:
+      'Apps a medida, agentes WhatsApp IA, automatización y CRM Enterprise. Tarragona y toda España.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -65,6 +74,43 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
   },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Aracne Consulting',
+  description:
+    'Asesoría de inteligencia artificial para empresas en Cataluña y España. Apps a medida, agentes WhatsApp IA, automatización de procesos y CRM Enterprise.',
+  url: SITE_URL,
+  telephone: '+34676269655',
+  email: 'hola@aracneconsulting.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Tarragona',
+    addressRegion: 'Cataluña',
+    addressCountry: 'ES',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 41.1189,
+    longitude: 1.2445,
+  },
+  areaServed: [
+    { '@type': 'AdministrativeArea', name: 'Cataluña' },
+    { '@type': 'Country', name: 'España' },
+  ],
+  serviceType: [
+    'Asesoría IA empresas',
+    'Desarrollo apps con IA',
+    'Agentes WhatsApp IA',
+    'Automatización de procesos',
+    'CRM Enterprise',
+    'Marketing digital IA',
+  ],
+  sameAs: [
+    'https://linkedin.com/company/aracne-consulting',
+  ],
 }
 
 export default async function RootLayout({
@@ -79,9 +125,15 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={questrial.variable}>
-      {/* <!-- GSC_VERIFICATION_CODE --> */}
-      {/* <!-- GA_MEASUREMENT_ID --> */}
-      {/* <!-- META_PIXEL_CODE --> */}
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {/* <!-- GSC_VERIFICATION_CODE --> */}
+        {/* <!-- GA_MEASUREMENT_ID --> */}
+        {/* <!-- META_PIXEL_CODE --> */}
+      </head>
       <body>
         <Navbar locale={locale} />
         <main className="pt-16">{children}</main>

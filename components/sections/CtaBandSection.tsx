@@ -41,27 +41,9 @@ export default function CtaBandSection({ dict }: CtaBandSectionProps) {
 
           {/* Right */}
           <FadeIn delay={0.12}>
-            <p className="text-aracne-body text-lg leading-relaxed mb-6">
+            <p className="text-aracne-body text-lg leading-relaxed">
               {c.subtitle}
             </p>
-            {/* Trust row */}
-            <div className="flex items-center gap-3">
-              <div className="flex -space-x-2">
-                {['#6832C5','#8B5CF6','#A78BFA','#C4B5FD'].map((color, i) => (
-                  <div
-                    key={i}
-                    className="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-medium"
-                    style={{ backgroundColor: color, zIndex: 10 - i }}
-                  >
-                    {['R','U','M','P'][i]}
-                  </div>
-                ))}
-              </div>
-              <div>
-                <p className="text-sm font-medium text-aracne-text">6+ empresas activas</p>
-                <p className="text-xs text-aracne-muted">Red Lab, Unelia, By Mumo y más</p>
-              </div>
-            </div>
           </FadeIn>
         </div>
       </div>

@@ -139,24 +139,6 @@ export default function HeroSection({ dict }: HeroSectionProps) {
               </a>
             </div>
 
-            {/* Trust signal */}
-            <div className="flex items-center gap-3 pt-2">
-              {/* Avatar stack */}
-              <div className="flex -space-x-2">
-                {['#6832C5','#8B5CF6','#A78BFA','#C4B5FD'].map((c, i) => (
-                  <div
-                    key={i}
-                    className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-medium"
-                    style={{ backgroundColor: c, zIndex: 10 - i }}
-                  >
-                    {['R','U','M','P'][i]}
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm text-aracne-muted">
-                <span className="text-aracne-text font-medium">6+ clientes</span> confían en Aracne
-              </p>
-            </div>
           </div>
 
           {/* Right: abstract 3-D illustration */}
