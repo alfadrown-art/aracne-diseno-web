@@ -130,7 +130,7 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* <!-- GSC_VERIFICATION_CODE --> */}
+        <meta name="google-site-verification" content="udQIm2lLlZKh3k8pEz63Y5hB4CjJuTr67tmb4zje7nE" />
         {/* <!-- GA_MEASUREMENT_ID --> */}
         {/* <!-- META_PIXEL_CODE --> */}
       </head>
