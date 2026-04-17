@@ -26,7 +26,7 @@ export default function Footer({ dict }: FooterProps) {
                 alt="Aracne"
                 width={32}
                 height={32}
-                className="w-8 h-8 brightness-0 invert"
+                className="w-8 h-8"
               />
               <span className="text-sm font-semibold tracking-widest text-white uppercase">
                 Aracne Consulting

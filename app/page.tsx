@@ -1,6 +1,5 @@
 import { getDict } from '@/lib/i18n'
 import HeroSection from '@/components/sections/HeroSection'
-import ClientsSection from '@/components/sections/ClientsSection'
 import ServicesHomeSection from '@/components/sections/ServicesHomeSection'
 import CrmHomeSection from '@/components/sections/CrmHomeSection'
 import CasesHomeSection from '@/components/sections/CasesHomeSection'
@@ -11,7 +10,6 @@ export default async function Home() {
   return (
     <>
       <HeroSection dict={dict} />
-      <ClientsSection dict={dict} />
       <ServicesHomeSection dict={dict} />
       <CrmHomeSection dict={dict} />
       <CasesHomeSection dict={dict} />
