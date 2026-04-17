@@ -20,13 +20,18 @@ export default function Footer({ dict }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2 space-y-5">
-            <Image
-              src="/logo.svg"
-              alt="Aracne Consulting"
-              width={160}
-              height={32}
-              className="brightness-0 invert"
-            />
+            <div className="flex items-center gap-2.5">
+              <Image
+                src="/logo.png"
+                alt="Aracne"
+                width={32}
+                height={32}
+                className="w-8 h-8 brightness-0 invert"
+              />
+              <span className="text-sm font-semibold tracking-widest text-white uppercase">
+                Aracne Consulting
+              </span>
+            </div>
             <p className="text-sm text-white/45 max-w-sm leading-relaxed">
               {f.tagline}
             </p>

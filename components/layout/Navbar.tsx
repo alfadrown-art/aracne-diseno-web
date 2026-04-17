@@ -50,14 +50,18 @@ export default function Navbar({ locale }: NavbarProps) {
     >
       <nav className="container-narrow flex items-center justify-between h-16">
         {/* Logo */}
-        <Link href="/" className="flex-shrink-0">
+        <Link href="/" className="flex-shrink-0 flex items-center gap-2.5">
           <Image
-            src="/logo.svg"
-            alt="Aracne Consulting"
-            width={160}
+            src="/logo.png"
+            alt="Aracne"
+            width={32}
             height={32}
             priority
+            className="w-8 h-8"
           />
+          <span className="text-sm font-semibold tracking-widest text-aracne-text uppercase">
+            Aracne Consulting
+          </span>
         </Link>
 
         {/* Desktop nav */}

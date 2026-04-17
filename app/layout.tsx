@@ -35,6 +35,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Aracne Consulting' }],
   creator: 'Aracne Consulting',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aracneconsulting.com',
   ),
