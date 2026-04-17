@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 222 47% 3%;
-    --foreground: 210 40% 95%;
-    --card: 220 39% 7%;
-    --card-foreground: 210 40% 95%;
-    --popover: 220 39% 7%;
-    --popover-foreground: 210 40% 95%;
-    --primary: 142 69% 45%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 8%;
+    --card: 0 0% 95%;
+    --card-foreground: 0 0% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+    --primary: 268 59% 48%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 30% 12%;
-    --secondary-foreground: 210 40% 95%;
-    --muted: 220 30% 12%;
-    --muted-foreground: 215 20% 60%;
-    --accent: 220 30% 12%;
-    --accent-foreground: 210 40% 95%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 8%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 61%;
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 0% 8%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 30% 16%;
-    --input: 220 30% 12%;
-    --ring: 142 69% 45%;
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 268 59% 48%;
     --radius: 0.75rem;
   }
 }
@@ -43,14 +43,9 @@
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-gradient-to-r from-aracne-emerald via-aracne-cyan to-aracne-emerald bg-clip-text text-transparent;
-    background-size: 200% auto;
-    animation: gradient-shift 4s linear infinite;
-  }
-
-  .text-gradient-static {
-    @apply bg-gradient-to-r from-aracne-emerald to-aracne-cyan bg-clip-text text-transparent;
+  /* Neurai-style section label */
+  .label-tag {
+    @apply inline-block text-xs font-semibold uppercase tracking-widest text-aracne-purple mb-3;
   }
 
   .section-padding {
@@ -61,68 +56,46 @@
     @apply container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
   }
 
-  .label-tag {
-    @apply inline-block text-xs font-semibold uppercase tracking-widest text-aracne-emerald mb-3;
+  /* Purple gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-aracne-purple to-violet-500 bg-clip-text text-transparent;
   }
 
-  .glass-card {
-    @apply bg-white/5 border border-white/10 backdrop-blur-sm rounded-xl;
+  .text-gradient-static {
+    @apply bg-gradient-to-r from-aracne-purple to-violet-500 bg-clip-text text-transparent;
   }
 
-  .glass-card-hover {
-    @apply hover:bg-white/10 hover:border-aracne-emerald/40 transition-all duration-300;
+  /* Neurai card style */
+  .neurai-card {
+    @apply bg-aracne-card rounded-2xl border border-aracne-border;
   }
 
-  .glow-emerald {
-    box-shadow: 0 0 30px rgba(34, 197, 94, 0.15), 0 0 60px rgba(34, 197, 94, 0.05);
+  /* Purple pill button */
+  .btn-purple {
+    @apply inline-flex items-center gap-2 bg-aracne-purple text-white font-medium px-6 py-3 rounded-full hover:bg-aracne-purple/90 transition-all duration-200 shadow-purple;
   }
 
-  .glow-emerald-sm {
-    box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-aracne-text text-aracne-text font-medium px-6 py-3 rounded-full hover:bg-aracne-text hover:text-white transition-all duration-200;
   }
 
-  .grid-bg {
-    background-image:
-      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
+  /* Lavender gradient CTA bg */
+  .cta-gradient {
+    background: linear-gradient(135deg, #FAFAFA 0%, #F3EEFF 40%, #EEF9EE 100%);
+  }
+
+  /* Numbered service row */
+  .service-row {
+    @apply grid grid-cols-[60px_1fr_auto] md:grid-cols-[80px_1fr_1fr_auto] items-center gap-6 bg-aracne-card rounded-2xl px-7 py-7 border border-aracne-border hover:border-aracne-purple/30 hover:shadow-card transition-all duration-200;
   }
 }
 
-@keyframes gradient-shift {
-  0% { background-position: 0% center; }
-  100% { background-position: 200% center; }
+/* Subtle scroll animations */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
-}
-
-@keyframes orb-drift {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -20px) scale(1.05); }
-  66% { transform: translate(-20px, 20px) scale(0.97); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-.animate-orb-drift {
-  animation: orb-drift 12s ease-in-out infinite;
-}
-
-.animate-orb-drift-reverse {
-  animation: orb-drift 15s ease-in-out infinite reverse;
+.animate-fade-up {
+  animation: fade-up 0.6s ease forwards;
 }

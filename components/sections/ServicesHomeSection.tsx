@@ -1,66 +1,74 @@
 import Link from 'next/link'
-import { Code2, Bot, TrendingUp, Brain, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import FadeIn from '@/components/common/FadeIn'
 import SectionLabel from '@/components/common/SectionLabel'
 import type { getDict } from '@/lib/i18n'
 
 type Dict = Awaited<ReturnType<typeof getDict>>
 
-const iconMap: Record<string, React.ElementType> = { Code2, Bot, TrendingUp, Brain }
-
 interface ServicesHomeSectionProps {
   dict: Dict
 }
 
+const numbers = ['01.', '02.', '03.', '04.']
+
 export default function ServicesHomeSection({ dict }: ServicesHomeSectionProps) {
   const s = dict.services_home
   return (
-    <section className="section-padding bg-aracne-bg relative overflow-hidden">
-      {/* Subtle grid */}
-      <div className="absolute inset-0 grid-bg pointer-events-none opacity-60" />
-      {/* Accent orb */}
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-aracne-cyan/5 rounded-full blur-[80px] pointer-events-none" />
-
-      <div className="relative container-narrow">
+    <section className="section-padding bg-aracne-bg">
+      <div className="container-narrow">
+        {/* Header */}
         <FadeIn>
-          <div className="max-w-2xl mb-14">
+          <div className="text-center max-w-2xl mx-auto mb-14">
             <SectionLabel>{s.label}</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+            <h2 className="text-4xl md:text-5xl text-aracne-text leading-tight mb-4">
               {s.title}{' '}
-              <span className="text-gradient-static">{s.title2}</span>
+              <span className="text-aracne-purple">{s.title2}</span>
             </h2>
-            <p className="text-white/50 text-lg leading-relaxed">{s.subtitle}</p>
+            <p className="text-aracne-body text-lg leading-relaxed">{s.subtitle}</p>
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-          {s.items.map((item, i) => {
-            const Icon = iconMap[item.icon] ?? Code2
-            return (
-              <FadeIn key={item.title} delay={i * 0.08}>
-                <div className="group glass-card glass-card-hover p-7 h-full">
-                  <div className="w-10 h-10 rounded-lg bg-aracne-emerald/10 border border-aracne-emerald/20 flex items-center justify-center mb-5 group-hover:bg-aracne-emerald/20 group-hover:border-aracne-emerald/40 transition-all">
-                    <Icon size={20} className="text-aracne-emerald" />
-                  </div>
-                  <h3 className="font-semibold text-white mb-2 leading-snug">
+        {/* Numbered service rows */}
+        <div className="space-y-4">
+          {s.items.map((item, i) => (
+            <FadeIn key={item.title} delay={i * 0.07}>
+              <div className="group bg-aracne-card rounded-2xl border border-aracne-border hover:border-aracne-purple/30 hover:shadow-card transition-all duration-200 px-7 py-7">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-5">
+                  {/* Number */}
+                  <span className="text-2xl text-aracne-purple/40 font-medium flex-shrink-0 w-14">
+                    {numbers[i]}
+                  </span>
+
+                  {/* Title */}
+                  <h3 className="text-lg text-aracne-text sm:w-64 flex-shrink-0 leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-white/50 leading-relaxed">
+
+                  {/* Description */}
+                  <p className="text-aracne-body text-sm leading-relaxed flex-1">
                     {item.description}
                   </p>
+
+                  {/* Link */}
+                  <Link
+                    href="/servicios"
+                    className="inline-flex items-center gap-1.5 text-sm text-aracne-purple font-medium hover:gap-3 transition-all flex-shrink-0"
+                  >
+                    Ver más <ArrowRight size={14} />
+                  </Link>
                 </div>
-              </FadeIn>
-            )
-          })}
+              </div>
+            </FadeIn>
+          ))}
         </div>
 
         <FadeIn delay={0.3}>
-          <Link
-            href="/servicios"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-aracne-emerald hover:gap-3 transition-all"
-          >
-            {s.cta} <ArrowRight size={15} />
-          </Link>
+          <div className="text-center mt-10">
+            <Link href="/servicios" className="btn-purple">
+              {s.cta} <ArrowRight size={15} />
+            </Link>
+          </div>
         </FadeIn>
       </div>
     </section>

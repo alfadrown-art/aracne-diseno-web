@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import FadeIn from '@/components/common/FadeIn'
 import SectionLabel from '@/components/common/SectionLabel'
 import type { getDict } from '@/lib/i18n'
@@ -10,80 +10,86 @@ interface CasesHomeSectionProps {
   dict: Dict
 }
 
-const tagColors: Record<string, string> = {
-  CRM: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
-  App: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
-  'Agente IA': 'bg-aracne-emerald/10 text-aracne-emerald border-aracne-emerald/20',
-  'AI Agent': 'bg-aracne-emerald/10 text-aracne-emerald border-aracne-emerald/20',
+/* Placeholder abstract image for each case */
+function CasePlaceholder({ index }: { index: number }) {
+  const gradients = [
+    ['#6832C5', '#A78BFA'],
+    ['#8B5CF6', '#C4B5FD'],
+    ['#7C3AED', '#DDD6FE'],
+  ]
+  const [from, to] = gradients[index % gradients.length]
+  return (
+    <div
+      className="w-full h-full rounded-2xl flex items-center justify-center"
+      style={{ background: `linear-gradient(135deg, ${from}22 0%, ${to}33 100%)` }}
+    >
+      <svg viewBox="0 0 200 200" className="w-2/3 h-2/3 opacity-40" fill="none">
+        <circle cx="100" cy="100" r="80" stroke={from} strokeWidth="1.5" strokeDasharray="6 4"/>
+        <circle cx="100" cy="100" r="55" fill={from} fillOpacity="0.15"/>
+        <circle cx="100" cy="100" r="28" fill={from} fillOpacity="0.3"/>
+        <circle cx="100" cy="100" r="10" fill={from} fillOpacity="0.7"/>
+      </svg>
+    </div>
+  )
 }
 
 export default function CasesHomeSection({ dict }: CasesHomeSectionProps) {
   const c = dict.cases_home
   return (
-    <section className="section-padding bg-aracne-dark relative overflow-hidden">
-      {/* Orb */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-aracne-emerald/4 rounded-full blur-[80px] pointer-events-none" />
-
-      <div className="relative container-narrow">
+    <section className="section-padding bg-aracne-dark overflow-hidden">
+      <div className="container-narrow">
+        {/* Header */}
         <FadeIn>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
             <div>
-              <SectionLabel>{c.label}</SectionLabel>
-              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+              <p className="label-tag text-aracne-purple/80">{c.label}</p>
+              <h2 className="text-4xl md:text-5xl text-white leading-tight">
                 {c.title}{' '}
-                <span className="text-gradient-static">{c.title2}</span>
+                <span className="text-gradient">{c.title2}</span>
               </h2>
             </div>
             <Link
               href="/casos"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-aracne-emerald hover:gap-3 transition-all flex-shrink-0"
+              className="inline-flex items-center gap-2 text-sm font-medium text-white/50 hover:text-white hover:gap-3 transition-all flex-shrink-0"
             >
               {c.cta} <ArrowRight size={15} />
             </Link>
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {c.items.map((item, i) => {
-            const tagClass = tagColors[item.tag] ?? 'bg-white/5 text-white/50 border-white/10'
-            return (
-              <FadeIn key={item.title} delay={i * 0.1}>
-                <div className="group glass-card glass-card-hover p-7 h-full flex flex-col">
-                  {/* Header */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${tagClass}`}>
+        {/* Alternating feature cards */}
+        <div className="space-y-6">
+          {c.items.map((item, i) => (
+            <FadeIn key={item.title} delay={i * 0.08}>
+              <div className={`grid grid-cols-1 md:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-white/10 ${i % 2 === 1 ? 'direction-rtl' : ''}`}>
+                {/* Image */}
+                <div className={`h-56 md:h-64 ${i % 2 === 1 ? 'md:order-last' : ''}`}>
+                  <CasePlaceholder index={i} />
+                </div>
+
+                {/* Content */}
+                <div className="bg-white/5 p-8 flex flex-col justify-center">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs font-semibold text-aracne-purple bg-aracne-purple/10 border border-aracne-purple/20 px-3 py-1 rounded-full">
                       {item.tag}
                     </span>
-                    <ArrowUpRight
-                      size={16}
-                      className="text-white/20 group-hover:text-aracne-emerald transition-colors"
-                    />
+                    <span className="text-xs text-white/30">{item.sector}</span>
                   </div>
-
-                  {/* Placeholder image area */}
-                  <div className="w-full h-36 bg-gradient-to-br from-white/5 to-aracne-emerald/5 rounded-lg mb-5 flex items-center justify-center border border-white/5">
-                    <span className="text-xs font-semibold text-white/20 uppercase tracking-wider">
-                      {item.sector}
-                    </span>
-                  </div>
-
-                  <h3 className="font-semibold text-white mb-2 leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-white/50 leading-relaxed flex-1">
-                    {item.description}
-                  </p>
-
-                  {/* Result */}
-                  <div className="mt-5 pt-4 border-t border-white/10">
-                    <span className="text-sm font-semibold text-aracne-emerald/80">
-                      {item.result}
-                    </span>
+                  <h3 className="text-xl text-white mb-3 leading-snug">{item.title}</h3>
+                  <p className="text-sm text-white/50 leading-relaxed mb-5">{item.description}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-aracne-purple/80">{item.result}</span>
+                    <Link
+                      href="/casos"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-aracne-purple hover:gap-3 transition-all"
+                    >
+                      Ver caso <ArrowRight size={13} />
+                    </Link>
                   </div>
                 </div>
-              </FadeIn>
-            )
-          })}
+              </div>
+            </FadeIn>
+          ))}
         </div>
       </div>
     </section>

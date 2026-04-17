@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { ArrowRight, MessageCircle } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import type { getDict } from '@/lib/i18n'
 
 type Dict = Awaited<ReturnType<typeof getDict>>
@@ -11,108 +10,92 @@ interface HeroSectionProps {
   dict: Dict
 }
 
-function NeuralNetwork() {
+/* SVG abstract 3-D shape inspired by Neurai's organic forms */
+function AbstractShape() {
   return (
     <svg
-      viewBox="0 0 560 480"
+      viewBox="0 0 520 480"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="w-full h-full"
       aria-hidden="true"
     >
       <defs>
-        <radialGradient id="node-glow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#22C55E" stopOpacity="0.4"/>
-          <stop offset="100%" stopColor="#22C55E" stopOpacity="0"/>
+        <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#6832C5" stopOpacity="0.18" />
+          <stop offset="100%" stopColor="#6832C5" stopOpacity="0" />
         </radialGradient>
-        <radialGradient id="node-glow-cyan" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#06B6D4" stopOpacity="0.3"/>
-          <stop offset="100%" stopColor="#06B6D4" stopOpacity="0"/>
+        <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#A78BFA" stopOpacity="0.12" />
+          <stop offset="100%" stopColor="#A78BFA" stopOpacity="0" />
         </radialGradient>
-        <filter id="glow-filter">
-          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-          <feMerge>
-            <feMergeNode in="coloredBlur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
+        <radialGradient id="sphere" cx="40%" cy="35%" r="60%">
+          <stop offset="0%" stopColor="#E5D8FF" />
+          <stop offset="45%" stopColor="#C4A8F0" />
+          <stop offset="100%" stopColor="#6832C5" />
+        </radialGradient>
+        <radialGradient id="sphere2" cx="35%" cy="30%" r="55%">
+          <stop offset="0%" stopColor="#F0E8FF" />
+          <stop offset="50%" stopColor="#DDD0FF" />
+          <stop offset="100%" stopColor="#B8A0E8" />
+        </radialGradient>
+        <filter id="soft-blur">
+          <feGaussianBlur stdDeviation="8" />
+        </filter>
+        <filter id="drop">
+          <feDropShadow dx="0" dy="20" stdDeviation="30" floodColor="#6832C5" floodOpacity="0.15"/>
         </filter>
       </defs>
 
-      {/* Central hub glow */}
-      <circle cx="280" cy="240" r="80" fill="url(#node-glow)" />
+      {/* Background orbs */}
+      <ellipse cx="300" cy="220" rx="220" ry="200" fill="url(#orb1)" />
+      <ellipse cx="180" cy="320" rx="160" ry="140" fill="url(#orb2)" />
 
-      {/* Central hub */}
-      <circle cx="280" cy="240" r="42" fill="#22C55E" fillOpacity="0.08" stroke="#22C55E" strokeWidth="1" strokeOpacity="0.4"/>
-      <circle cx="280" cy="240" r="26" fill="#22C55E" fillOpacity="0.12" stroke="#22C55E" strokeWidth="1" strokeOpacity="0.6"/>
-      <circle cx="280" cy="240" r="12" fill="#22C55E" filter="url(#glow-filter)"/>
+      {/* Main glass sphere */}
+      <ellipse cx="310" cy="210" rx="130" ry="130" fill="url(#sphere)" filter="url(#drop)" opacity="0.9"/>
 
-      {/* Spoke nodes */}
+      {/* Highlight on sphere */}
+      <ellipse cx="272" cy="168" rx="38" ry="28" fill="white" opacity="0.35" transform="rotate(-20 272 168)" />
+
+      {/* Secondary sphere */}
+      <ellipse cx="168" cy="310" rx="72" ry="72" fill="url(#sphere2)" opacity="0.8" />
+      <ellipse cx="150" cy="292" rx="18" ry="14" fill="white" opacity="0.4" transform="rotate(-15 150 292)" />
+
+      {/* Small accent circles */}
+      <circle cx="430" cy="120" r="28" fill="#6832C5" opacity="0.12" />
+      <circle cx="430" cy="120" r="14" fill="#6832C5" opacity="0.18" />
+      <circle cx="430" cy="120" r="6" fill="#6832C5" opacity="0.5" />
+
+      <circle cx="80" cy="160" r="20" fill="#A78BFA" opacity="0.15" />
+      <circle cx="80" cy="160" r="10" fill="#A78BFA" opacity="0.2" />
+
+      <circle cx="460" cy="340" r="36" fill="#6832C5" opacity="0.08" />
+      <circle cx="460" cy="340" r="18" fill="#6832C5" opacity="0.12" />
+
+      {/* Floating stat card */}
+      <g transform="translate(52, 190)">
+        <rect width="140" height="64" rx="14" fill="white" stroke="#E8E8E8" strokeWidth="1" filter="url(#drop)" opacity="0.95"/>
+        <circle cx="24" cy="32" r="16" fill="#6832C5" opacity="0.12" />
+        <circle cx="24" cy="32" r="8" fill="#6832C5" opacity="0.6" />
+        <rect x="50" y="18" width="74" height="8" rx="4" fill="#141414" opacity="0.12" />
+        <rect x="50" y="32" width="54" height="6" rx="3" fill="#9CA2A8" opacity="0.35" />
+        <rect x="50" y="44" width="40" height="5" rx="2.5" fill="#6832C5" opacity="0.4" />
+      </g>
+
+      {/* Floating tag card */}
+      <g transform="translate(350, 340)">
+        <rect width="130" height="52" rx="12" fill="white" stroke="#E8E8E8" strokeWidth="1" filter="url(#drop)" opacity="0.95"/>
+        <rect x="12" y="14" width="46" height="8" rx="4" fill="#6832C5" opacity="0.2" />
+        <rect x="12" y="28" width="106" height="5" rx="2.5" fill="#9CA2A8" opacity="0.3" />
+        <rect x="12" y="38" width="70" height="5" rx="2.5" fill="#9CA2A8" opacity="0.2" />
+      </g>
+
+      {/* Connection dots */}
       {[
-        { cx: 160, cy: 140 },
-        { cx: 400, cy: 130 },
-        { cx: 430, cy: 290 },
-        { cx: 320, cy: 360 },
-        { cx: 150, cy: 320 },
-        { cx: 95, cy: 215 },
-      ].map((n, i) => (
-        <g key={i}>
-          <line
-            x1="280" y1="240" x2={n.cx} y2={n.cy}
-            stroke="#22C55E" strokeWidth="1" strokeOpacity="0.25" strokeDasharray="4 4"
-          />
-          <circle cx={n.cx} cy={n.cy} r="30" fill="url(#node-glow)" />
-          <circle cx={n.cx} cy={n.cy} r="8" fill="#22C55E" fillOpacity="0.1" stroke="#22C55E" strokeWidth="1" strokeOpacity="0.5"/>
-          <circle cx={n.cx} cy={n.cy} r="3.5" fill="#22C55E" filter="url(#glow-filter)"/>
-        </g>
+        [200, 100], [380, 90], [490, 200], [140, 400],
+      ].map(([cx, cy], i) => (
+        <circle key={i} cx={cx} cy={cy} r="4" fill="#6832C5" opacity="0.25" />
       ))}
-
-      {/* Satellite nodes */}
-      {[
-        { cx: 100, cy: 100, c: '#06B6D4' },
-        { cx: 200, cy: 80, c: '#22C55E' },
-        { cx: 460, cy: 80, c: '#06B6D4' },
-        { cx: 490, cy: 190, c: '#22C55E' },
-        { cx: 490, cy: 380, c: '#06B6D4' },
-        { cx: 370, cy: 420, c: '#22C55E' },
-        { cx: 200, cy: 400, c: '#06B6D4' },
-        { cx: 80, cy: 380, c: '#22C55E' },
-      ].map((n, i) => (
-        <g key={i}>
-          <circle cx={n.cx} cy={n.cy} r="20" fill={n.c} fillOpacity="0.06" />
-          <circle cx={n.cx} cy={n.cy} r="4" fill={n.c} fillOpacity="0.5" stroke={n.c} strokeWidth="1" strokeOpacity="0.4"/>
-        </g>
-      ))}
-
-      {/* Connection arcs */}
-      <path d="M160 140 Q130 90 100 100" stroke="#22C55E" strokeWidth="0.8" strokeOpacity="0.2" fill="none"/>
-      <path d="M400 130 Q430 90 460 80" stroke="#06B6D4" strokeWidth="0.8" strokeOpacity="0.2" fill="none"/>
-      <path d="M430 290 Q475 335 490 380" stroke="#22C55E" strokeWidth="0.8" strokeOpacity="0.2" fill="none"/>
-      <path d="M150 320 Q120 360 80 380" stroke="#06B6D4" strokeWidth="0.8" strokeOpacity="0.2" fill="none"/>
-
-      {/* Floating glass card — top right */}
-      <g transform="translate(390, 55)">
-        <rect width="136" height="58" rx="10" fill="white" fillOpacity="0.05" stroke="white" strokeOpacity="0.12" strokeWidth="1"/>
-        <rect x="12" y="14" width="36" height="6" rx="3" fill="#22C55E" fillOpacity="0.5"/>
-        <rect x="12" y="26" width="110" height="3" rx="1.5" fill="white" fillOpacity="0.1"/>
-        <rect x="12" y="35" width="80" height="3" rx="1.5" fill="white" fillOpacity="0.07"/>
-        <circle cx="114" cy="20" r="8" fill="#22C55E" fillOpacity="0.2"/>
-        <circle cx="114" cy="20" r="4" fill="#22C55E" filter="url(#glow-filter)"/>
-      </g>
-
-      {/* Floating glass card — bottom left */}
-      <g transform="translate(55, 338)">
-        <rect width="124" height="54" rx="10" fill="white" fillOpacity="0.05" stroke="white" strokeOpacity="0.12" strokeWidth="1"/>
-        <rect x="12" y="12" width="100" height="5" rx="2.5" fill="white" fillOpacity="0.12"/>
-        <rect x="12" y="24" width="72" height="4" rx="2" fill="white" fillOpacity="0.07"/>
-        <rect x="12" y="34" width="57" height="4" rx="2" fill="#06B6D4" fillOpacity="0.4"/>
-      </g>
-
-      {/* Stat badge */}
-      <g transform="translate(428, 328)">
-        <rect width="100" height="46" rx="23" fill="#22C55E" fillOpacity="0.08" stroke="#22C55E" strokeWidth="1" strokeOpacity="0.3"/>
-        <text x="50" y="20" textAnchor="middle" fill="#22C55E" fontFamily="Inter, sans-serif" fontWeight="700" fontSize="13">+40%</text>
-        <text x="50" y="34" textAnchor="middle" fill="#22C55E" fontFamily="Inter, sans-serif" fontSize="9" fillOpacity="0.6">conversión</text>
-      </g>
     </svg>
   )
 }
@@ -120,73 +103,66 @@ function NeuralNetwork() {
 export default function HeroSection({ dict }: HeroSectionProps) {
   const h = dict.hero
   return (
-    <section className="relative bg-aracne-bg section-padding overflow-hidden">
-      {/* Grid background */}
-      <div className="absolute inset-0 grid-bg pointer-events-none" />
+    <section className="bg-aracne-bg section-padding overflow-hidden">
+      <div className="container-narrow">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
 
-      {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-aracne-emerald/8 rounded-full blur-[120px] pointer-events-none animate-orb-drift" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-aracne-cyan/6 rounded-full blur-[100px] pointer-events-none animate-orb-drift-reverse" />
-
-      <div className="relative container-narrow">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: text */}
-          <div className="space-y-8">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 text-xs font-semibold text-aracne-emerald bg-aracne-emerald/10 border border-aracne-emerald/20 px-4 py-2 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-aracne-emerald animate-pulse" />
-              Asesoría de IA · Cataluña y España
-            </div>
+          <div className="space-y-8 max-w-xl">
+            {/* Label */}
+            <p className="label-tag">Bienvenidos a Aracne</p>
 
-            <div className="space-y-4">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
-                <span className="text-white block">{h.line1}</span>
-                <span className="text-gradient block">{h.line2}</span>
-              </h1>
-              <p className="text-lg text-white/50 max-w-md leading-relaxed">
-                {h.subtitle}
-              </p>
-            </div>
+            {/* Headline */}
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl leading-[1.15] tracking-tight text-aracne-text">
+              {h.line1}{' '}
+              <span className="text-gradient">{h.line2}</span>
+            </h1>
 
+            {/* Subtitle */}
+            <p className="text-lg text-aracne-body leading-relaxed max-w-md">
+              {h.subtitle}
+            </p>
+
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button
-                asChild
-                size="lg"
-                className="bg-aracne-emerald hover:bg-aracne-emerald/90 text-white font-semibold text-base h-12 px-7 glow-emerald-sm transition-all"
+              <Link href="/servicios" className="btn-purple">
+                {h.cta_primary} <ArrowRight size={16} />
+              </Link>
+              <a
+                href={`https://wa.me/${WA_NUMBER}?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20me%20interesa%20saber%20m%C3%A1s%20sobre%20vuestros%20servicios%20de%20IA`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline"
               >
-                <Link href="/servicios">
-                  {h.cta_primary} <ArrowRight size={16} className="ml-2" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-white/15 bg-white/5 text-white hover:bg-white/10 hover:border-white/25 text-base h-12 px-7 backdrop-blur-sm"
-              >
-                <a
-                  href={`https://wa.me/${WA_NUMBER}?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20me%20interesa%20saber%20m%C3%A1s%20sobre%20vuestros%20servicios%20de%20IA`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle size={16} className="mr-2 text-[#25D366]" />
-                  {h.cta_secondary}
-                </a>
-              </Button>
+                <MessageCircle size={16} className="text-[#25D366]" />
+                {h.cta_secondary}
+              </a>
             </div>
 
             {/* Trust signal */}
-            <p className="text-xs text-white/30 flex items-center gap-2">
-              <span className="inline-block w-6 h-px bg-aracne-emerald/50" />
-              Powered by Claude AI · WhatsApp Business API · Unelia CRM
-            </p>
+            <div className="flex items-center gap-3 pt-2">
+              {/* Avatar stack */}
+              <div className="flex -space-x-2">
+                {['#6832C5','#8B5CF6','#A78BFA','#C4B5FD'].map((c, i) => (
+                  <div
+                    key={i}
+                    className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-medium"
+                    style={{ backgroundColor: c, zIndex: 10 - i }}
+                  >
+                    {['R','U','M','P'][i]}
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-aracne-muted">
+                <span className="text-aracne-text font-medium">6+ clientes</span> confían en Aracne
+              </p>
+            </div>
           </div>
 
-          {/* Right: neural network illustration */}
-          <div className="relative w-full aspect-[7/6] lg:aspect-auto lg:h-[460px]">
-            {/* Glow behind illustration */}
-            <div className="absolute inset-0 bg-aracne-emerald/5 rounded-2xl blur-xl" />
-            <NeuralNetwork />
+          {/* Right: abstract 3-D illustration */}
+          <div className="relative w-full aspect-square lg:aspect-auto lg:h-[520px] flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-radial from-aracne-purple-light/60 to-transparent rounded-3xl" />
+            <AbstractShape />
           </div>
         </div>
       </div>

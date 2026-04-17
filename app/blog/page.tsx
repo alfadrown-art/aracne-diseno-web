@@ -26,21 +26,15 @@ function formatDate(dateStr: string) {
 export default function BlogPage() {
   return (
     <main className="bg-aracne-bg min-h-screen">
-      {/* Grid bg */}
-      <div className="fixed inset-0 grid-bg pointer-events-none opacity-40" />
-
-      {/* Orb */}
-      <div className="fixed top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-aracne-emerald/5 rounded-full blur-[120px] pointer-events-none" />
-
-      <div className="relative container-narrow section-padding">
+      <div className="container-narrow section-padding">
         {/* Header */}
         <div className="max-w-2xl mb-16">
           <span className="label-tag">Blog</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+          <h1 className="text-4xl md:text-5xl text-aracne-text leading-tight mb-4">
             IA para empresas.{' '}
-            <span className="text-gradient-static">Sin tecnicismos.</span>
+            <span className="text-aracne-purple">Sin tecnicismos.</span>
           </h1>
-          <p className="text-white/50 text-lg leading-relaxed">
+          <p className="text-aracne-body text-lg leading-relaxed">
             Artículos prácticos sobre automatización, agentes IA y transformación digital
             para empresas de Cataluña y España.
           </p>
@@ -52,33 +46,33 @@ export default function BlogPage() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group glass-card glass-card-hover p-7 flex flex-col h-full"
+              className="group neurai-card hover:border-aracne-purple/30 hover:shadow-card transition-all duration-200 p-7 flex flex-col h-full"
             >
               {/* Category + read time */}
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-xs font-semibold text-aracne-emerald bg-aracne-emerald/10 border border-aracne-emerald/20 px-2.5 py-1 rounded-full flex items-center gap-1.5">
+                <span className="text-xs font-medium text-aracne-purple bg-aracne-purple-light border border-aracne-purple/15 px-2.5 py-1 rounded-full flex items-center gap-1.5">
                   <Tag size={10} />
                   {post.category}
                 </span>
-                <span className="text-xs text-white/30 flex items-center gap-1">
+                <span className="text-xs text-aracne-muted flex items-center gap-1">
                   <Clock size={10} />
                   {post.readTime}
                 </span>
               </div>
 
-              <h2 className="text-base font-semibold text-white leading-snug mb-3 group-hover:text-aracne-emerald transition-colors">
+              <h2 className="text-base text-aracne-text leading-snug mb-3 group-hover:text-aracne-purple transition-colors">
                 {post.title}
               </h2>
-              <p className="text-sm text-white/50 leading-relaxed flex-1">
+              <p className="text-sm text-aracne-body leading-relaxed flex-1">
                 {post.description}
               </p>
 
               {/* Footer */}
-              <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
-                <span className="text-xs text-white/30">{formatDate(post.date)}</span>
+              <div className="mt-5 pt-4 border-t border-aracne-border flex items-center justify-between">
+                <span className="text-xs text-aracne-muted">{formatDate(post.date)}</span>
                 <ArrowRight
                   size={14}
-                  className="text-white/30 group-hover:text-aracne-emerald group-hover:translate-x-1 transition-all"
+                  className="text-aracne-muted group-hover:text-aracne-purple group-hover:translate-x-1 transition-all"
                 />
               </div>
             </Link>

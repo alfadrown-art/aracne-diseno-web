@@ -5,14 +5,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 const navLinks = [
+  { href: '/', labelEs: 'Inicio', labelEn: 'Home' },
+  { href: '/empresa', labelEs: 'Nosotros', labelEn: 'About' },
   { href: '/servicios', labelEs: 'Servicios', labelEn: 'Services' },
   { href: '/casos', labelEs: 'Casos', labelEn: 'Cases' },
   { href: '/blog', labelEs: 'Blog', labelEn: 'Blog' },
-  { href: '/empresa', labelEs: 'Empresa', labelEn: 'Company' },
   { href: '/contacto', labelEs: 'Contacto', labelEn: 'Contact' },
 ]
 
@@ -44,10 +44,8 @@ export default function Navbar({ locale }: NavbarProps) {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        scrolled
-          ? 'bg-aracne-bg/95 backdrop-blur-md border-b border-white/10 shadow-[0_1px_20px_rgba(0,0,0,0.4)]'
-          : 'bg-transparent border-b border-white/5',
+        'fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300',
+        scrolled ? 'shadow-[0_1px_12px_rgba(0,0,0,0.06)]' : 'border-b border-aracne-border',
       )}
     >
       <nav className="container-narrow flex items-center justify-between h-16">
@@ -56,26 +54,27 @@ export default function Navbar({ locale }: NavbarProps) {
           <Image
             src="/logo.svg"
             alt="Aracne Consulting"
-            width={190}
-            height={38}
+            width={160}
+            height={32}
             priority
-            className="brightness-0 invert"
           />
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="hidden md:flex items-center gap-0.5">
           {navLinks.map((link) => {
-            const active = pathname === link.href || pathname.startsWith(link.href + '/')
+            const active = link.href === '/'
+              ? pathname === '/'
+              : pathname.startsWith(link.href)
             return (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   className={cn(
-                    'px-4 py-2 text-sm font-medium rounded-md transition-colors',
+                    'px-4 py-2 text-sm transition-colors rounded-lg',
                     active
-                      ? 'text-aracne-emerald'
-                      : 'text-white/50 hover:text-white',
+                      ? 'text-aracne-purple font-medium'
+                      : 'text-aracne-body hover:text-aracne-text',
                   )}
                 >
                   {label(link)}
@@ -88,46 +87,41 @@ export default function Navbar({ locale }: NavbarProps) {
         {/* Desktop right */}
         <div className="hidden md:flex items-center gap-3">
           {/* Language toggle */}
-          <div className="flex items-center gap-0.5 text-xs text-white/40">
+          <div className="flex items-center gap-0.5 text-xs text-aracne-muted">
             <button
               onClick={() => setLocale('es')}
               className={cn(
                 'px-2 py-1 rounded transition-colors font-medium',
-                locale === 'es' ? 'text-aracne-emerald' : 'hover:text-white/70',
+                locale === 'es' ? 'text-aracne-purple' : 'hover:text-aracne-text',
               )}
             >
               ES
             </button>
-            <span className="text-white/20">|</span>
+            <span className="text-aracne-border">|</span>
             <button
               onClick={() => setLocale('en')}
               className={cn(
                 'px-2 py-1 rounded transition-colors font-medium',
-                locale === 'en' ? 'text-aracne-emerald' : 'hover:text-white/70',
+                locale === 'en' ? 'text-aracne-purple' : 'hover:text-aracne-text',
               )}
             >
               EN
             </button>
           </div>
 
-          <Button
-            asChild
-            size="sm"
-            className="bg-aracne-emerald hover:bg-aracne-emerald/90 text-white font-semibold glow-emerald-sm"
+          <a
+            href={`https://wa.me/${WA_NUMBER}?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20me%20interesa%20saber%20m%C3%A1s%20sobre%20vuestros%20servicios%20de%20IA`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-purple text-sm py-2.5 px-5"
           >
-            <a
-              href={`https://wa.me/${WA_NUMBER}?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20me%20interesa%20saber%20m%C3%A1s%20sobre%20vuestros%20servicios%20de%20IA`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {locale === 'en' ? 'Talk to us' : 'Hablar con nosotros'}
-            </a>
-          </Button>
+            {locale === 'en' ? 'Get Started' : 'Empezar'}
+          </a>
         </div>
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 text-white/70 hover:text-white"
+          className="md:hidden p-2 text-aracne-body hover:text-aracne-text"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -137,20 +131,20 @@ export default function Navbar({ locale }: NavbarProps) {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-aracne-bg/98 backdrop-blur-md border-b border-white/10 px-4 pb-6 pt-2">
+        <div className="md:hidden bg-white border-b border-aracne-border px-4 pb-6 pt-2">
           <ul className="flex flex-col gap-1 mb-4">
             {navLinks.map((link) => {
-              const active = pathname === link.href
+              const active = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)
               return (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
                     className={cn(
-                      'block px-3 py-2.5 rounded-md text-sm font-medium transition-colors',
+                      'block px-3 py-2.5 rounded-lg text-sm transition-colors',
                       active
-                        ? 'text-aracne-emerald bg-aracne-emerald/10'
-                        : 'text-white/50 hover:text-white hover:bg-white/5',
+                        ? 'text-aracne-purple bg-aracne-purple-light font-medium'
+                        : 'text-aracne-body hover:text-aracne-text hover:bg-aracne-surface',
                     )}
                   >
                     {label(link)}
@@ -159,14 +153,14 @@ export default function Navbar({ locale }: NavbarProps) {
               )
             })}
           </ul>
-          <div className="flex items-center gap-3 mb-4 pt-2 border-t border-white/10">
+          <div className="flex items-center gap-3 mb-4 pt-3 border-t border-aracne-border">
             <button
               onClick={() => setLocale('es')}
               className={cn(
-                'text-sm px-3 py-1.5 rounded border font-medium',
+                'text-sm px-3 py-1.5 rounded-full border font-medium',
                 locale === 'es'
-                  ? 'border-aracne-emerald text-aracne-emerald bg-aracne-emerald/10'
-                  : 'border-white/20 text-white/50',
+                  ? 'border-aracne-purple text-aracne-purple bg-aracne-purple-light'
+                  : 'border-aracne-border text-aracne-muted',
               )}
             >
               ES
@@ -174,28 +168,24 @@ export default function Navbar({ locale }: NavbarProps) {
             <button
               onClick={() => setLocale('en')}
               className={cn(
-                'text-sm px-3 py-1.5 rounded border font-medium',
+                'text-sm px-3 py-1.5 rounded-full border font-medium',
                 locale === 'en'
-                  ? 'border-aracne-emerald text-aracne-emerald bg-aracne-emerald/10'
-                  : 'border-white/20 text-white/50',
+                  ? 'border-aracne-purple text-aracne-purple bg-aracne-purple-light'
+                  : 'border-aracne-border text-aracne-muted',
               )}
             >
               EN
             </button>
           </div>
-          <Button
-            asChild
-            className="w-full bg-aracne-emerald hover:bg-aracne-emerald/90 text-white font-semibold"
+          <a
+            href={`https://wa.me/${WA_NUMBER}?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20me%20interesa%20saber%20m%C3%A1s%20sobre%20vuestros%20servicios%20de%20IA`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
+            className="btn-purple w-full justify-center text-sm"
           >
-            <a
-              href={`https://wa.me/${WA_NUMBER}?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20me%20interesa%20saber%20m%C3%A1s%20sobre%20vuestros%20servicios%20de%20IA`}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMenuOpen(false)}
-            >
-              {locale === 'en' ? 'Talk to us' : 'Hablar con nosotros'}
-            </a>
-          </Button>
+            {locale === 'en' ? 'Get Started' : 'Empezar ahora'}
+          </a>
         </div>
       )}
     </header>

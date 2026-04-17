@@ -6,6 +6,7 @@ interface ClientsSectionProps {
   dict: Dict
 }
 
+/* Real Aracne clients */
 const clients = [
   'Red Lab',
   'Unelia',
@@ -17,16 +18,16 @@ const clients = [
 
 export default function ClientsSection({ dict }: ClientsSectionProps) {
   return (
-    <section className="border-y border-white/5 bg-aracne-dark/60 py-10">
+    <section className="bg-aracne-dark py-12">
       <div className="container-narrow">
-        <p className="text-xs font-semibold uppercase tracking-widest text-white/30 text-center mb-8">
+        <p className="text-xs font-semibold uppercase tracking-widest text-white/40 text-center mb-8">
           {dict.clients.label}
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
+        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
           {clients.map((name) => (
             <span
               key={name}
-              className="text-sm font-semibold text-white/25 tracking-wide hover:text-white/50 transition-colors"
+              className="text-sm font-medium text-white/30 tracking-wide hover:text-white/60 transition-colors"
             >
               {name}
             </span>

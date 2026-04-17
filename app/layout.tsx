@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Questrial } from 'next/font/google'
 import { cookies } from 'next/headers'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
@@ -8,9 +8,10 @@ import WhatsAppButton from '@/components/layout/WhatsAppButton'
 import { Toaster } from '@/components/ui/toaster'
 import { getDict, getLocaleFromCookie } from '@/lib/i18n'
 
-const inter = Inter({
+const questrial = Questrial({
+  weight: '400',
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-questrial',
   display: 'swap',
 })
 
@@ -73,7 +74,7 @@ export default async function RootLayout({
   const dict = await getDict()
 
   return (
-    <html lang={locale} className={inter.variable}>
+    <html lang={locale} className={questrial.variable}>
       {/* <!-- GSC_VERIFICATION_CODE --> */}
       {/* <!-- GA_MEASUREMENT_ID --> */}
       {/* <!-- META_PIXEL_CODE --> */}
